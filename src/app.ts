@@ -1,5 +1,5 @@
 import { marked } from 'marked';
-import * as sanitizeHtml from 'sanitize-html';
+import sanitizeHtml from 'sanitize-html';
 import { mangle } from 'marked-mangle';
 import { gfmHeadingId } from 'marked-gfm-heading-id';
 import { getClassName } from './utils';
