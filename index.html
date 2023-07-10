@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Ubuntu:wght@700&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+			integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+			integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<script type="module" src="/src/app.ts" defer></script>
+		<title>Markdown editor</title>
+	</head>
+	<body>
+		<main class="editor">
+			<div id="code-area" class="editor__panel editor__panel--code">
+				<form>
+					<textarea
+						id="code-area-control"
+						class="editor__control"
+						aria-label="Enter your markdown text here"
+					></textarea>
+				</form>
+			</div>
+			<div class="utility-bar">
+				<button
+					id="split-screen"
+					class="button button--toggle utility-bar__button active"
+					type="button"
+					title="Toggle split view"
+				>
+					<svg class="icon icon--inline icon--24">
+						<use
+							xlink:href="/assets/sprite.svg#icon-split-screen"
+						></use>
+					</svg>
+				</button>
+				<button
+					id="view-full-preview"
+					class="button button--toggle utility-bar__button"
+					type="button"
+					title="Toggle full screen preview"
+				>
+					<svg class="icon icon--inline icon--24">
+						<use xlink:href="/assets/sprite.svg#icon-eye"></use>
+					</svg>
+				</button>
+			</div>
+			<div
+				id="preview-area"
+				class="editor__panel editor__panel--preview"
+			></div>
+		</main>
+	</body>
+</html>
