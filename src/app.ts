@@ -4,7 +4,7 @@ import { EditorView } from './views/editor.view';
 import './styles.css';
 
 function init() {
-	const app = new EditorController(new EditorModel(), new EditorView());
+	new EditorController(new EditorModel(), new EditorView());
 }
 
 window.addEventListener('DOMContentLoaded', init);
