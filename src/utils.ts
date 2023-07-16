@@ -24,3 +24,32 @@ export function getClassName(...str: (string | number | object)[]): string {
 		}, [])
 		.join(' ');
 }
+
+type ThrottledFunction<T extends any[]> = (...args: T) => void;
+
+export function throttle<T extends any[]>(
+	func: (...args: T) => void,
+	delay: number
+): ThrottledFunction<T> {
+	let timeoutId: ReturnType<typeof setTimeout> | undefined;
+	let lastExecTime = 0;
+
+	return function (this: unknown, ...args: T) {
+		const currentTime = Date.now();
+
+		const execute = () => {
+			func.apply(this, args);
+			lastExecTime = currentTime;
+		};
+
+		if (timeoutId) {
+			clearTimeout(timeoutId);
+		}
+
+		if (currentTime - lastExecTime > delay) {
+			execute();
+		} else {
+			timeoutId = setTimeout(execute, delay);
+		}
+	};
+}
